@@ -47,36 +47,86 @@ SESSION_INFO = {
     }
 
 BASE_IMAGING_PARAMS_DICOM_TAGS = {
-    'Manufacturer'          : [0x08, 0x70],
-    'BodyPartExamined'      : [0x18, 0x15],
-    'EchoTime'              : [0x18, 0x81],
-    'RepetitionTime'        : [0x18, 0x80],
-    'MagneticFieldStrength' : [0x18, 0x87],
-    'FlipAngle'             : [0x18, 0x1314],
-    'PhaseEncodingDirection': [0x18, 0x1312],
-    'EchoTrainLength'       : [0x18, 0x0091],
-    'PixelBandwidth'        : [0x18, 0x95],
-    'ScanningSequence'      : [0x18, 0x20],
-    'SequenceVariant'       : [0x18, 0x21],
-    'MRAcquisitionType'     : [0x18, 0x23],
-    'PhaseEncodingSteps'    : [0x18, 0x89]
+    ## Hardware Parameters
+    'Manufacturer'                  : [0x08, 0x70],
+    'ManufacturersModelName'        : [0x08, 0x1090],
+    'SoftwareVersions'              : [0x18, 0x1020],
+    'MagneticFieldStrength'         : [0x18, 0x87],
+    'ReceiveCoilName'               : [0x18, 0x1250],
+    'MRTransmitCoilSequence'        : [0x18, 0x9049],
+
+    ## Sequence Specifics
+    'ScanningSequence'              : [0x18, 0x20],
+    'SequenceVariant'               : [0x18, 0x21],
+    'ScanOptions'                   : [0x18, 0x22],
+    'SequenceName'                  : [0x18, 0x24],
+    'NonLinearGradientCorrection'   : [0x08, 0x08],
+    'MRAcquisitionType'             : [0x18, 0x23],
+    'MTState'                       : [0x18, 0x9020],
+    'SpoilingState'                 : [0x18, 0x9016],
+
+    ## In-Plane Spatial Encoding
+    'ParallelReductionFactorInPlane': [0x18, 0x9069],
+    'ParallelAcquisitionTechnique'  : [0x18, 0x9078],
+    'PartialFourier'                : [0x18, 0x9081],
+    'PartialFourierDirection'       : [0x18, 0x9036],
+    'PhaseEncodingDirection'        : [0x18, 0x1312],
+
+    ## Timing Parameters
+    'EchoTime'                      : [0x18, 0x81],
+    'InversionTime'                 : [0x18, 0x82],
+    'DwellTime'                     : [0x19, 0x1018],
+    'RepetitionTime'                : [0x18, 0x80],
+
+    ## RF & Contrast Parameters
+    'FlipAngle'                     : [0x18, 0x1314],
+
+    ## Slice Acceleration Parameters
+    'MultibandAccelerationFactor'   : [0x43, 0x1083],
+
+    ## Misc Parameters
+    'BodyPartExamined'              : [0x18, 0x15],
+    'EchoTrainLength'               : [0x18, 0x0091],
+    'PixelBandwidth'                : [0x18, 0x95],
+    'PhaseEncodingSteps'            : [0x18, 0x89],
     }
 
 ACRONYMS_IMAGING_PARAMETERS = {
-    'Manufacturer'          : 'MFR',
-    'BodyPartExamined'      : 'BPE',
-    'EchoTime'              : 'TE',
-    'RepetitionTime'        : 'TR',
-    'MagneticFieldStrength' : 'MFS',
-    'FlipAngle'             : 'FA',
-    'PhaseEncodingDirection': 'PED',
-    'PhaseEncodingSteps'    : 'PES',
-    'EchoTrainLength'       : 'ETL',
-    'PixelBandwidth'        : 'PBW',
-    'ScanningSequence'      : 'SSEQ',
-    'SequenceVariant'       : 'SEQV',
-    'MRAcquisitionType'     : 'MRAT',
-    'EffectiveEchoSpacing'  : 'EES',
+    'Manufacturer'                  : 'MFR',
+    'ManufacturersModelName'        : 'MMN',
+    'SoftwareVersions'              : 'SV',
+    'MagneticFieldStrength'         : 'MFS',
+    'ReceiveCoilName'               : 'RCN',
+    'MRTransmitCoilSequence'        : 'MTCS',
+    'ScanningSequence'              : 'SSEQ',
+    'SequenceVariant'               : 'SEQV',
+    'ScanOptions'                   : 'SCOP',
+    'SequenceName'                  : 'SQNM',
+    'NonLinearGradientCorrection'   : 'NLGC',
+    'MRAcquisitionType'             : 'MRAT',
+    'MTState'                       : 'MTS',
+    'SpoilingState'                 : 'SPLS',
+    'ParallelReductionFactorInPlane': 'PRFIP',
+    'ParallelAcquisitionTechnique'  : 'PAT',
+    'PartialFourier'                : 'PF',
+    'PartialFourierDirection'       : 'PFD',
+    'PhaseEncodingDirection'        : 'PED',
+    'EchoTime'                      : 'TE',
+    'InversionTime'                 : 'TI',
+    'DwellTime'                     : 'DT',
+    'RepetitionTime'                : 'TR',
+    'FlipAngle'                     : 'FA',
+    'MultibandAccelerationFactor'   : 'MAF',
+    'BodyPartExamined'              : 'BPE',
+    'EchoTrainLength'               : 'ETL',
+    'PixelBandwidth'                : 'PBW',
+    'PhaseEncodingSteps'            : 'PES',
+    'GradientSetType'               : 'GST',
+    'MatrixCoilMode'                : 'MCM',
+    'CoilCombinationMethod'         : 'CCM',
+    'EffectiveEchoSpacing'          : 'EES',
+    'ShimSetting'                   : 'SHS',
+    'MultiSliceMode'                : 'MSM',
     }
 
 BASE_IMAGING_PARAMETER_NAMES = list(BASE_IMAGING_PARAMS_DICOM_TAGS.keys())
