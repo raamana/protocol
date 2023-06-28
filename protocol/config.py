@@ -89,6 +89,7 @@ BASE_IMAGING_PARAMS_DICOM_TAGS = {
     'EchoTrainLength'               : [0x18, 0x0091],
     'PixelBandwidth'                : [0x18, 0x95],
     'PhaseEncodingSteps'            : [0x18, 0x89],
+    'EchoNumber'                    : [0x18, 0x86],
     }
 
 ACRONYMS_IMAGING_PARAMETERS = {
@@ -127,6 +128,7 @@ ACRONYMS_IMAGING_PARAMETERS = {
     'EffectiveEchoSpacing'          : 'EES',
     'ShimSetting'                   : 'SHS',
     'MultiSliceMode'                : 'MSM',
+    'EchoNumber'                    : 'EN',
     }
 
 BASE_IMAGING_PARAMETER_NAMES = list(BASE_IMAGING_PARAMS_DICOM_TAGS.keys())
