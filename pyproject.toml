@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "protocol"
 dynamic = ["version"]
 description = "generic framework to develop protocols with implementations in neuroscience"
-readme = "README.rst"
+readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.8"
 dependencies = [
